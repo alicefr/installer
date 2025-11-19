@@ -706,7 +706,7 @@ github.com/coreos/go-semver/semver
 # github.com/coreos/go-systemd/v22 v22.6.0
 ## explicit; go 1.23
 github.com/coreos/go-systemd/v22/unit
-# github.com/coreos/ignition/v2 v2.24.0
+# github.com/coreos/ignition/v2 v2.24.0 => github.com/trusted-execution-clusters/ignition/v2 v2.0.0-20251027151835-74c1254399e1
 ## explicit; go 1.24.0
 github.com/coreos/ignition/v2/config/merge
 github.com/coreos/ignition/v2/config/shared/errors
@@ -3027,3 +3027,4 @@ sigs.k8s.io/yaml/goyaml.v3
 # github.com/nutanix-cloud-native/cluster-api-provider-nutanix => github.com/nutanix-cloud-native/cluster-api-provider-nutanix v1.7.2-0.20251007022949-442bc2ebe286
 # sigs.k8s.io/cluster-api-provider-aws/v2 => github.com/clebs/cluster-api-provider-aws/v2 v2.0.0-20251107144358-6be716cd866c
 # sigs.k8s.io/cluster-api-provider-azure => github.com/mboersma/cluster-api-provider-azure v0.3.1-0.20251030205607-3161b9cc8d3e
+# github.com/coreos/ignition/v2 => github.com/trusted-execution-clusters/ignition/v2 v2.0.0-20251027151835-74c1254399e1

@@ -258,8 +258,6 @@ github.com/coreos/go-semver v0.3.1 h1:yi21YpKnrx1gt5R+la8n5WgS0kCrsPp33dmEyHReZr
 github.com/coreos/go-semver v0.3.1/go.mod h1:irMmmIw/7yzSRPWryHsK7EYSg09caPQL03VsM8rvUec=
 github.com/coreos/go-systemd/v22 v22.6.0 h1:aGVa/v8B7hpb0TKl0MWoAavPDmHvobFe5R5zn0bCJWo=
 github.com/coreos/go-systemd/v22 v22.6.0/go.mod h1:iG+pp635Fo7ZmV/j14KUcmEyWF+0X7Lua8rrTWzYgWU=
-github.com/coreos/ignition/v2 v2.24.0 h1:TVcsSWiYvhXihD8Mss3CTRuKaNZM2OIfpoKiudIhrKo=
-github.com/coreos/ignition/v2 v2.24.0/go.mod h1:HelGgFZ1WZ4ZPOIDS0a06A2JTdbbdAine5r3AkSYz5s=
 github.com/coreos/stream-metadata-go v0.4.10-0.20250806142651-4a7d280a6c7b h1:CT6nMx5Ap/K6MT8zMqByrWz+RZV7O6pBGW5LhB/pwvY=
 github.com/coreos/stream-metadata-go v0.4.10-0.20250806142651-4a7d280a6c7b/go.mod h1:dTE8UEFgyUcrbdUg7vGT3uIP7S8a1IwUlmWLKlOp8G8=
 github.com/coreos/vcontext v0.0.0-20230201181013-d72178a18687 h1:uSmlDgJGbUB0bwQBcZomBTottKwEDF5fF8UjSwKSzWM=
@@ -845,6 +843,8 @@ github.com/thedevsaddam/retry v0.0.0-20200324223450-9769a859cc6d/go.mod h1:2rz2m
 github.com/thoas/go-funk v0.9.3 h1:7+nAEx3kn5ZJcnDm2Bh23N2yOtweO14bi//dvRtgLpw=
 github.com/thoas/go-funk v0.9.3/go.mod h1:+IWnUfUmFO1+WVYQWQtIJHeRRdaIyyYglZN7xzUPe4Q=
 github.com/tidwall/pretty v1.0.0/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
+github.com/trusted-execution-clusters/ignition/v2 v2.0.0-20251027151835-74c1254399e1 h1:G79imiPs2TU7d98tyQy93XabkYSbC3N5r+4s1rq3O4Q=
+github.com/trusted-execution-clusters/ignition/v2 v2.0.0-20251027151835-74c1254399e1/go.mod h1:HelGgFZ1WZ4ZPOIDS0a06A2JTdbbdAine5r3AkSYz5s=
 github.com/ulikunitz/xz v0.5.12 h1:37Nm15o69RwBkXM0J6A5OlE67RZTfzUxTj8fB3dfcsc=
 github.com/ulikunitz/xz v0.5.12/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
 github.com/vincent-petithory/dataurl v1.0.0 h1:cXw+kPto8NLuJtlMsI152irrVw9fRDX8AbShPRpg2CI=

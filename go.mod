@@ -384,3 +384,6 @@ replace (
 	sigs.k8s.io/cluster-api-provider-aws/v2 => github.com/clebs/cluster-api-provider-aws/v2 v2.0.0-20251107144358-6be716cd866c
 	sigs.k8s.io/cluster-api-provider-azure => github.com/mboersma/cluster-api-provider-azure v0.3.1-0.20251030205607-3161b9cc8d3e
 )
+
+// Use attestation fork of ignition
+replace github.com/coreos/ignition/v2 => github.com/trusted-execution-clusters/ignition/v2 v2.0.0-20251027151835-74c1254399e1
