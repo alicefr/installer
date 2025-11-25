@@ -173,6 +173,7 @@ func (a *Common) Dependencies() []asset.Asset {
 		&tls.IronicTLSCert{},
 		&releaseimage.Image{},
 		new(rhcos.Image),
+		&ConfidentialClusterConfig{},
 	}
 }
 
@@ -187,6 +188,13 @@ func (a *Common) generateConfig(dependencies asset.Parents, templateData *bootst
 		Ignition: igntypes.Ignition{
 			Version: igntypes.MaxVersion.String(),
 		},
+	}
+
+	// Apply confidential cluster configuration if provided
+	confidentialClusterConfig := &ConfidentialClusterConfig{}
+	dependencies.Get(confidentialClusterConfig)
+	if confidentialClusterConfig.Config != nil {
+		a.applyConfidentialClusterConfig(confidentialClusterConfig)
 	}
 
 	if err := AddStorageFiles(a.Config, "/", "bootstrap/files", templateData); err != nil {
@@ -702,6 +710,40 @@ func applyTemplateData(template *template.Template, templateData interface{}) st
 		panic(err)
 	}
 	return buf.String()
+}
+
+// applyConfidentialClusterConfig applies the clevis configuration to the bootstrap ignition.
+// This configures the LUKS encryption with the specified clevis pin for confidential clusters.
+func (a *Common) applyConfidentialClusterConfig(confidentialClusterConfig *ConfidentialClusterConfig) {
+	if confidentialClusterConfig == nil || confidentialClusterConfig.Config == nil {
+		return
+	}
+
+	logrus.Info("Applying confidential cluster clevis configuration to bootstrap ignition")
+
+	luksEntry := igntypes.Luks{
+		Name:       "root",
+		Device:     ptr.To("/dev/disk/by-partlabel/root"),
+		Clevis:     *confidentialClusterConfig.Config,
+		Label:      ptr.To("root"),
+		WipeVolume: ptr.To(true),
+	}
+
+	a.Config.Storage.Luks = append(a.Config.Storage.Luks, luksEntry)
+	logrus.Debugf("Added LUKS configuration for confidential cluster: %+v", luksEntry)
+
+	// Add filesystem definition for the LUKS volume
+	filesystemEntry := igntypes.Filesystem{
+		Device:         "/dev/mapper/root",
+		Format:         ptr.To("ext4"),
+		Label:          ptr.To("root"),
+		Options:        []igntypes.FilesystemOption{"-O", "verity"},
+		UUID:           ptr.To("910678ff-f77e-4a7d-8d53-86f2ac47a823"),
+		WipeFilesystem: ptr.To(true),
+	}
+
+	a.Config.Storage.Filesystems = append(a.Config.Storage.Filesystems, filesystemEntry)
+	logrus.Debugf("Added filesystem configuration for confidential cluster: %+v", filesystemEntry)
 }
 
 // Load returns the bootstrap ignition from disk.
