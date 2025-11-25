@@ -722,6 +722,18 @@ github.com/coreos/ignition/v2/config/v3_1/types
 github.com/coreos/ignition/v2/config/v3_2
 github.com/coreos/ignition/v2/config/v3_2/translate
 github.com/coreos/ignition/v2/config/v3_2/types
+github.com/coreos/ignition/v2/config/v3_3
+github.com/coreos/ignition/v2/config/v3_3/translate
+github.com/coreos/ignition/v2/config/v3_3/types
+github.com/coreos/ignition/v2/config/v3_4
+github.com/coreos/ignition/v2/config/v3_4/translate
+github.com/coreos/ignition/v2/config/v3_4/types
+github.com/coreos/ignition/v2/config/v3_5
+github.com/coreos/ignition/v2/config/v3_5/translate
+github.com/coreos/ignition/v2/config/v3_5/types
+github.com/coreos/ignition/v2/config/v3_6_experimental
+github.com/coreos/ignition/v2/config/v3_6_experimental/translate
+github.com/coreos/ignition/v2/config/v3_6_experimental/types
 github.com/coreos/ignition/v2/config/validate
 # github.com/coreos/stream-metadata-go v0.4.10-0.20250806142651-4a7d280a6c7b
 ## explicit; go 1.18
